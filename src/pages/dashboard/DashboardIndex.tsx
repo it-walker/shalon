@@ -1,9 +1,5 @@
-type Props = {}
-
-const DashboardIndex = (props: Props) => {
-  return (
-    <div>ButtonPage</div>
-  )
+function DashboardIndex() {
+  return <div>ButtonPage</div>
 }
 
 export default DashboardIndex
