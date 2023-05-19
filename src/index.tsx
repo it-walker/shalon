@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 Amplify.configure(awsExports);
 
 const root = ReactDOM.createRoot(
@@ -13,7 +15,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App signOut={""} user={""}/>
+    <Provider store={store}>
+      <App signOut={""} user={""}/>
+    </Provider>
   </React.StrictMode>
 );
 

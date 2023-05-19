@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { API, graphqlOperation } from 'aws-amplify';
 import { createTodo } from './graphql/mutations';
 import { listTodos } from './graphql/queries';
-import { withAuthenticator, Button, Heading, TextField, View, Text } from '@aws-amplify/ui-react';
+import { withAuthenticator, Button, Heading, TextField, View, Text, Flex } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-
-// import awsExports from './aws-exports'
 import { Todo } from './models';
-// Amplify.configure(awsExports)
+import { Page01 } from './ui-components';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import NavigationBar from './components/NavigationBar';
+import MySideBar from './components/SideBar';
+import MainLayout from './components/layout/MainLayout';
+import { routes } from './routes';
 
 const initialState = { name: '', description: '' }
 
@@ -48,51 +51,58 @@ const App = ({ signOut, user }) => {
   }
 
   return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout/>}>
+          {routes}
+        </Route>
+      </Routes>
+    </BrowserRouter>
     // @ts-ignore
-    <div style={styles.container}>
-      <Heading level={1}>Hello {user.username}</Heading>
-      <Button onClick={signOut}>Sign out</Button>
-      <Heading level={2}>Amplify Todos</Heading>
-      <TextField
-        label='Name'
-        labelHidden={true}
-        onChange={event => setInput('name', event.target.value)}
-        style={styles.input}
-        defaultValue={formState.name}
-        placeholder='Name'
-      />
-      <TextField
-        label="Description"
-        labelHidden={true}
-        onChange={event => setInput('description', event.target.value)}
-        style={styles.input}
-        value={formState.description}
-        placeholder='Description'
-      />
-      <Button
-        style={styles.button}
-        onClick={addTodo}
-      >
-        Create Todo
-      </Button>
-      {
-        // @ts-ignore
-        todos.map((todo: Todo, index: number) => (
-          <View key={todo.id ? todo.id : index} style={styles.todo}>
-            <Text
-              style={styles.todoName}
-            >
-              {todo.name}
-            </Text>
-            <Text
-              style={styles.todoDescription}
-            >
-              {todo.description}
-            </Text>
-          </View>
-        ))
-      }
-    </div>
+    // <div style={styles.container}>
+    //   <Heading level={1}>Hello {user.username}</Heading>
+    //   <Button onClick={signOut}>Sign out</Button>
+    //   <Heading level={2}>Amplify Todos</Heading>
+    //   <TextField
+    //     label='Name'
+    //     labelHidden={true}
+    //     onChange={event => setInput('name', event.target.value)}
+    //     style={styles.input}
+    //     defaultValue={formState.name}
+    //     placeholder='Name'
+    //   />
+    //   <TextField
+    //     label="Description"
+    //     labelHidden={true}
+    //     onChange={event => setInput('description', event.target.value)}
+    //     style={styles.input}
+    //     value={formState.description}
+    //     placeholder='Description'
+    //   />
+    //   <Button
+    //     style={styles.button}
+    //     onClick={addTodo}
+    //   >
+    //     Create Todo
+    //   </Button>
+    //   {
+    //     // @ts-ignore
+    //     todos.map((todo: Todo, index: number) => (
+    //       <View key={todo.id ? todo.id : index} style={styles.todo}>
+    //         <Text
+    //           style={styles.todoName}
+    //         >
+    //           {todo.name}
+    //         </Text>
+    //         <Text
+    //           style={styles.todoDescription}
+    //         >
+    //           {todo.description}
+    //         </Text>
+    //       </View>
+    //     ))
+    //   }
+    // </div>
   );
 }
 
