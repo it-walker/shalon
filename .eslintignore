@@ -1,2 +1,11 @@
 amplify-codegen-temp/models
 src/models
+
+/build
+/amplify
+/.vscode
+/node_modules
+/public
+/.eslintrc.js
+/src/ui-components
+amplify-codegen-temp/models

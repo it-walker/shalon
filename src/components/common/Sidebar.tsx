@@ -7,46 +7,39 @@ import SidebarItemCollapse from './SidebarItemCollapse'
 import SidebarItem from './SidebarItem'
 import assets from '../../assets'
 
-type Props = {}
-
-const Sidebar = (props: Props) => {
+function Sidebar() {
   return (
     <Drawer
       variant="permanent"
       sx={{
         width: sizeConfigs.sidebar.width,
         flexShrink: 0,
-        "& .MuiDrawer-paper": {
+        '& .MuiDrawer-paper': {
           width: sizeConfigs.sidebar.width,
-          boxSizing: "border-box",
-          borderRight: "0px",
+          boxSizing: 'border-box',
+          borderRight: '0px',
           backgroundColor: colorConfigs.sidebar.bg,
-          color: colorConfigs.sidebar.color
-        }
+          color: colorConfigs.sidebar.color,
+        },
       }}
     >
       <List disablePadding>
-        <Toolbar sx={{ marginBottom: "20px" }}>
-          <Stack
-            sx={{ width: "100%" }}
-            direction="row"
-            justifyContent="center"
-          >
-            <Avatar src={assets.images.logo}/>
+        <Toolbar sx={{ marginBottom: '20px' }}>
+          <Stack sx={{ width: '100%' }} direction="row" justifyContent="center">
+            <Avatar src={assets.images.logo} />
           </Stack>
         </Toolbar>
-        {appRoutes.map((route, index) => (
+        {appRoutes.map((route, index) =>
           route.sidebarProps ? (
             route.child ? (
               <SidebarItemCollapse item={route} key={index} />
             ) : (
-              <SidebarItem item={route} key={index}/>
+              <SidebarItem item={route} key={index} />
             )
-          ): null
-        ))}
+          ) : null
+        )}
       </List>
     </Drawer>
-    
   )
 }
 
