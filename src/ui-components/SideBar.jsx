@@ -52,7 +52,7 @@ export default function SideBar(props) {
           alignSelf="stretch"
           position="relative"
           padding="0px 32px 0px 32px"
-          {...getOverrideProps(overrides, "Frame 32129767088")}
+          {...getOverrideProps(overrides, "Main")}
         >
           <View
             width="unset"

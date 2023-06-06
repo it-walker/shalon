@@ -58,10 +58,13 @@ function SidebarItemCollapse({ item }: Props) {
       <Collapse in={open} timeout="auto">
         <List>
           {item.child?.map((route, index) =>
+            // eslint-disable-next-line no-nested-ternary
             route.sidebarProps ? (
               route.child ? (
+                // eslint-disable-next-line react/no-array-index-key
                 <SidebarItemCollapse item={route} key={index} />
               ) : (
+                // eslint-disable-next-line react/no-array-index-key
                 <SidebarItem item={route} key={index} />
               )
             ) : null

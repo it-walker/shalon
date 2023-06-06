@@ -1,9 +1,5 @@
-type Props = {}
-
-const ButtonPage = (props: Props) => {
-  return (
-    <div>ButtonPage</div>
-  )
+function ButtonPage() {
+  return <div>ButtonPage</div>
 }
 
 export default ButtonPage

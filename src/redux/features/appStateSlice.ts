@@ -1,10 +1,11 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-type AppState = {
+// eslint-disable-next-line @typescript-eslint/naming-convention
+type appState = {
   appState: string
 }
 
-const initialState: AppState = {
+const initialState: appState = {
   appState: '',
 }
 

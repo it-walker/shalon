@@ -1,5 +1,5 @@
 function DashboardIndex() {
-  return <div>ButtonPage</div>
+  return <div>BauttonPage</div>
 }
 
 export default DashboardIndex
