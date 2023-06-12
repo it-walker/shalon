@@ -11,7 +11,7 @@ export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes
 export declare type SideBarOverridesProps = {
     SideBar?: PrimitiveOverrideProps<FlexProps>;
     "Frame 32129767087"?: PrimitiveOverrideProps<FlexProps>;
-    "Frame 32129767088"?: PrimitiveOverrideProps<FlexProps>;
+    Main?: PrimitiveOverrideProps<FlexProps>;
     "Rectangle 1162"?: PrimitiveOverrideProps<ViewProps>;
     "Frame 414"?: PrimitiveOverrideProps<FlexProps>;
     ORGANIZATION29767091?: PrimitiveOverrideProps<TextProps>;

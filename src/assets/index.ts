@@ -1,7 +1,9 @@
+const logo = require('./images/typescript-logo-240.png')
+
 const assets = {
   images: {
-    logo: require("./images/typescript-logo-240.png")
-  }
+    logo,
+  },
 }
 
 export default assets

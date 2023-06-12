@@ -6,6 +6,8 @@
 
 export { default as EditProfile } from "./EditProfile";
 export { default as StandardCard } from "./StandardCard";
+export { default as SideBar02 } from "./SideBar02";
+export { default as MyGroup } from "./MyGroup";
 export { default as ItemCard } from "./ItemCard";
 export { default as FAQItem } from "./FAQItem";
 export { default as ProductDetail } from "./ProductDetail";
@@ -13,6 +15,7 @@ export { default as HeroLayout4 } from "./HeroLayout4";
 export { default as HeroLayout1 } from "./HeroLayout1";
 export { default as ProductCard } from "./ProductCard";
 export { default as ContactUs } from "./ContactUs";
+export { default as MyRadio } from "./MyRadio";
 export { default as SocialPost } from "./SocialPost";
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as MarketingPricing } from "./MarketingPricing";
@@ -27,6 +30,7 @@ export { default as Features2x3 } from "./Features2x3";
 export { default as Features2x2 } from "./Features2x2";
 export { default as NavBar } from "./NavBar";
 export { default as ActionCard } from "./ActionCard";
+export { default as TestVariantRed } from "./TestVariantRed";
 export { default as CommentCard } from "./CommentCard";
 export { default as HomeCard } from "./HomeCard";
 export { default as ProfileCard } from "./ProfileCard";
